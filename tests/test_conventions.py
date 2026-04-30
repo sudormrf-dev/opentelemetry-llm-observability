@@ -13,38 +13,38 @@ from patterns.conventions import (
 
 
 class TestLLMProvider:
-    def test_openai_value(self):
-        assert LLMProvider.OPENAI == "openai"
+    def test_openai_value(self) -> None:
+        assert LLMProvider.OPENAI.value == "openai"
 
-    def test_anthropic_value(self):
-        assert LLMProvider.ANTHROPIC == "anthropic"
+    def test_anthropic_value(self) -> None:
+        assert LLMProvider.ANTHROPIC.value == "anthropic"
 
-    def test_all_have_values(self):
+    def test_all_have_values(self) -> None:
         assert all(p.value for p in LLMProvider)
 
 
 class TestLLMOperation:
-    def test_chat(self):
-        assert LLMOperation.CHAT == "chat"
+    def test_chat(self) -> None:
+        assert LLMOperation.CHAT.value == "chat"
 
-    def test_embedding(self):
-        assert LLMOperation.EMBEDDING == "embeddings"
+    def test_embedding(self) -> None:
+        assert LLMOperation.EMBEDDING.value == "embeddings"
 
 
 class TestLLMFramework:
-    def test_langchain(self):
-        assert LLMFramework.LANGCHAIN == "langchain"
+    def test_langchain(self) -> None:
+        assert LLMFramework.LANGCHAIN.value == "langchain"
 
-    def test_raw(self):
-        assert LLMFramework.RAW == "raw"
+    def test_raw(self) -> None:
+        assert LLMFramework.RAW.value == "raw"
 
 
 class TestLLMErrorType:
-    def test_rate_limit(self):
-        assert LLMErrorType.RATE_LIMIT == "rate_limit_error"
+    def test_rate_limit(self) -> None:
+        assert LLMErrorType.RATE_LIMIT.value == "rate_limit_error"
 
-    def test_context_length(self):
-        assert LLMErrorType.CONTEXT_LENGTH == "context_length_exceeded"
+    def test_context_length(self) -> None:
+        assert LLMErrorType.CONTEXT_LENGTH.value == "context_length_exceeded"
 
 
 class TestSpanKind:
