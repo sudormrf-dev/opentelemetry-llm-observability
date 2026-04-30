@@ -20,8 +20,9 @@ import gc
 import random
 import time
 import tracemalloc
-from dataclasses import dataclass, field
-from typing import Any, Callable
+from collections.abc import Callable
+from dataclasses import dataclass
+from typing import Any
 
 from patterns.sampling import SamplingDecision, SamplingRule, SamplingStrategy, TraceSampler
 

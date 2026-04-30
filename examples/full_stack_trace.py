@@ -17,7 +17,6 @@ import time
 import uuid
 from dataclasses import dataclass, field
 from datetime import UTC, datetime
-from typing import Any
 
 from patterns.conventions import LLMAttributes, LLMOperation, LLMProvider
 from patterns.spans import LLMSpan, LLMSpanBuilder, SpanStatus

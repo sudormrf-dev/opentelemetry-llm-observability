@@ -216,7 +216,7 @@ def print_dashboard(tracker: TokenCostTracker) -> None:
 
     total = tracker.total_cost()
     tokens = tracker.total_tokens()
-    req_count = len(tracker._all_requests)  # noqa: SLF001
+    req_count = len(tracker._all_requests)
 
     print(f"  Total cost          : ${total:.4f}")
     print(f"  Total tokens        : {tokens:,}")
@@ -225,7 +225,7 @@ def print_dashboard(tracker: TokenCostTracker) -> None:
     print(f"  Cost per 1K tokens  : ${total / max(tokens / 1_000, 0.001):.6f}")
     print(f"  Error rate          : {tracker.error_rate() * 100:.1f}%")
     print(f"  p95 latency         : {tracker.p95_latency_ms():.0f} ms")
-    print(f"  Alerts fired        : {len(tracker._alerts)}")  # noqa: SLF001
+    print(f"  Alerts fired        : {len(tracker._alerts)}")
 
     # Annualised projection
     monthly_projection = total * 30  # 100 requests ~ 1 day of traffic
@@ -245,7 +245,7 @@ def print_dashboard(tracker: TokenCostTracker) -> None:
     print("  Top 5 Most Expensive Sessions")
     print(divider)
     for rank, (session_id, cost) in enumerate(tracker.top_sessions(5), 1):
-        session = tracker._sessions[session_id]  # noqa: SLF001
+        session = tracker._sessions[session_id]
         print(
             f"  #{rank}  {session_id[:8]}...  "
             f"${cost:.4f}  {session.request_count()} reqs  "
